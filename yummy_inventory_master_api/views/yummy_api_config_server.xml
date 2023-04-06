@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Author => Albertus Restiyanto Pramayudha
+     email  => xabre0010@gmail.com
+     linkedin => https://www.linkedin.com/in/albertus-restiyanto-pramayudha-470261a8/
+     youtube => https://www.youtube.com/channel/UCCtgLDIfqehJ1R8cohMeTXA
+-->
+<odoo>
+	<data>
+		<record id="yummy_api_config_server_wiz" model="ir.ui.view">
+			<field name="name">API  Config Settings</field>
+			<field name="model">yummy.api.server</field>
+			<field name="arch" type="xml">
+			<form string="Transfer Remark">
+                    <group>
+                        <field name="user_name"/>
+                        <field name="passwd"/>
+                        <field name="db_active" />
+                    </group>
+                    <footer>
+						<button name="action_apply" string="Confirm" type="object"
+							 class="btn-primary"/>
+						<button string="Cancel" class="btn-default" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="act_yummy_api_server_config" model="ir.actions.act_window">
+			<field name="name">API Config Server Setting</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">yummy.api.server</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+        <menuitem
+                id="menu_yummy_api_server_setting"
+                name="Yummy API"
+                parent="base.menu_administration"
+                sequence="1"
+                groups="base.group_system"/>
+        <menuitem
+                id="menu_app_api_config_server"
+                parent="menu_yummy_api_server_setting"
+				name="API Server Config"
+                sequence="1"
+                action="act_yummy_api_server_config"
+                groups="base.group_system"/>
+
+	</data>
+
+</odoo>

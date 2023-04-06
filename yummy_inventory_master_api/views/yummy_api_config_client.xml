@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Author => Albertus Restiyanto Pramayudha
+     email  => xabre0010@gmail.com
+     linkedin => https://www.linkedin.com/in/albertus-restiyanto-pramayudha-470261a8/
+     youtube => https://www.youtube.com/channel/UCCtgLDIfqehJ1R8cohMeTXA
+-->
+<odoo>
+	<data>
+		<record id="yummy_api_config_client_wiz" model="ir.ui.view">
+			<field name="name">API Config Client Settings</field>
+			<field name="model">yummy.api.client</field>
+			<field name="arch" type="xml">
+			<form string="Client Setting">
+                    <group>
+                        <field name="url_host"/>
+						<field name="token_login"/>
+                    </group>
+                    <footer>
+						<button name="action_apply" string="Confirm" type="object"
+							 class="btn-primary"/>
+						<button string="Cancel" class="btn-default" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="act_yummy_api_client_config" model="ir.actions.act_window">
+			<field name="name">API Config Client Setting</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">yummy.api.client</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+        <menuitem
+                id="menu_app_api_config_client"
+                parent="menu_yummy_api_server_setting"
+				name="API Client Config"
+                sequence="1"
+                action="act_yummy_api_client_config"
+                groups="base.group_system"/>
+
+	</data>
+
+</odoo>

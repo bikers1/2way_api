@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Author => Albertus Restiyanto Pramayudha
+     email  => xabre0010@gmail.com
+     linkedin => https://www.linkedin.com/in/albertus-restiyanto-pramayudha-470261a8/
+     youtube => https://www.youtube.com/channel/UCCtgLDIfqehJ1R8cohMeTXA
+-->
+<odoo>
+    <data>
+        <record id="ir_cron_master_product" model="ir.cron">
+            <field name="name">Sending Master Product To POS</field>
+            <field name="model_id" ref="model_product_product"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field eval="False" name="doall"/>
+            <field name="state">code</field>
+            <field name="code">model.start_onetime_product_sync()</field>
+        </record>
+   </data>
+</odoo>

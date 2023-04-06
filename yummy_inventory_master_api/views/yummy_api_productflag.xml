@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Author => Albertus Restiyanto Pramayudha
+     email  => xabre0010@gmail.com
+     linkedin => https://www.linkedin.com/in/albertus-restiyanto-pramayudha-470261a8/
+     youtube => https://www.youtube.com/channel/UCCtgLDIfqehJ1R8cohMeTXA
+-->
+<odoo>
+	<data>
+        <record id="yummy_inventory_master_api_product_tempalate_form_view" model="ir.ui.view">
+            <field name="name">yummy,inventory,master.api.product.template.form.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='barcode']" position="after">
+                        <field name="core_item" invisible="1"/>
+                        <field name="is_new_data" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
